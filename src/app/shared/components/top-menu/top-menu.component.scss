@@ -1,0 +1,44 @@
+@import "_variables";
+
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-left: 16px;
+    color: $color-text-l;
+    height: 69px;
+    img {
+        height: 44px;
+        width: 44px;
+    }
+
+    .active {
+        color: $color-text;
+        img {
+            animation: normal 240ms scalein;
+        }
+        p {
+            transition: color 200ms ease-in;
+        }
+    }
+    .list-item {
+        margin: 0px 20px 0px 0px;
+        display: grid;
+        place-items: center;
+        .title {
+            margin-top: 5px;
+            height: 20px;
+            line-height: 20px;
+        }
+    }
+}
+
+@keyframes scalein {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
