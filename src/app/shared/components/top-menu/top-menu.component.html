@@ -1,0 +1,11 @@
+<div class="top-menu">
+  <ul class="menu-list">
+    <li
+      *ngFor="let item of menu; let index = index"
+      [ngClass]="{ 'list-item': true, active: selectedIndex === index }"
+      (click)="handleSelection(index)">
+      <img [src]="selectedIndex === index ? item.active : item.img" />
+      <p class="title">{{ item.title }}</p>
+    </li>
+  </ul>
+</div>
