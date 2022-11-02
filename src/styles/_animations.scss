@@ -1,0 +1,66 @@
+@keyframes scalein {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    10% {
+        transform: rotate(-12deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    20% {
+        transform: rotate(12deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    28% {
+        transform: rotate(-10deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    36% {
+        transform: rotate(10deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    42% {
+        transform: rotate(-8deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    48% {
+        transform: rotate(8deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    52% {
+        transform: rotate(-4deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    56% {
+        transform: rotate(4deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    60% {
+        transform: rotate(0deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    100% {
+        transform: rotate(0deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+}

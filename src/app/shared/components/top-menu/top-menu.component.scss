@@ -1,4 +1,5 @@
 @import "_variables";
+@import "_animations";
 
 .menu-list {
     display: flex;
@@ -7,7 +8,6 @@
     padding-left: 16px;
     color: $color-text-l;
     height: 69px;
-    overflow-x: auto;
     img {
         height: 44px;
         width: 44px;
@@ -31,15 +31,5 @@
             height: 20px;
             line-height: 20px;
         }
-    }
-}
-
-@keyframes scalein {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.05);
     }
 }
