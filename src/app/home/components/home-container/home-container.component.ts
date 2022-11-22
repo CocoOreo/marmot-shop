@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { topMenu } from 'src/app/shared/configs/top-menu';
 import { MenuItem } from 'src/app/shared/components/top-menu/top-menu.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-container',
@@ -49,8 +50,10 @@ export class HomeContainerComponent {
     },
   ];
 
+  constructor(private router: Router) {}
+
   handleTabSelected(item: MenuItem) {
     console.log('Select', item);
+    this.router.navigate(['home', item.link]);
   }
-  constructor() {}
 }

@@ -1,22 +1,12 @@
 import {
-  style,
-  trigger,
-  state,
-  query,
-  transition,
-  animate,
-  AnimationEvent,
-} from '@angular/animations';
-import {
   Component,
-  ElementRef,
   EventEmitter,
   Input,
   OnInit,
   Output,
   Renderer2,
-  ViewChild,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 export interface Product {
   id: number;
@@ -30,7 +20,7 @@ export interface Product {
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   @Input() list: Product[] = [];
   @Input() withAnimation: boolean = true;
   @Output() clickProduct = new EventEmitter();
@@ -38,11 +28,13 @@ export class ProductListComponent {
   @Input() targetPosX: string = '352';
   @Input() targetPosY: string = '29';
 
-  constructor(private rd2: Renderer2) {}
+  constructor(private rd2: Renderer2, private route: ActivatedRoute) {}
 
   activeId: number = -1;
   horizontalDis: string = '500';
   verticalDis: string = '500';
+
+  selectedTabLink: string = '';
 
   formatCurrency(price: number) {
     return `$ ${price.toLocaleString('en-CA')}`;
@@ -80,5 +72,11 @@ export class ProductListComponent {
     moveIcon.ontransitionend = function () {
       this.remove();
     };
+  }
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(param => {
+      this.selectedTabLink = param.get('tabLink') || 'popular';
+    });
   }
 }
