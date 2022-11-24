@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="search">
+    <img src="assets/images/search.svg" />
+  </div>
+  <div class="title">
+    <h2>MAKE HOME</h2>
+    <h1>BEAUTIFUL</h1>
+  </div>
+  <div class="cart">
+    <img src="assets/images/cart.svg" />
+  </div>
+</div>
+<div class="top-menu-container">
+  <app-top-menu
+    [menu]="menu"
+    (tabSelected)="handleTabSelected($event)"></app-top-menu>
+</div>
+<div class="list-container">
+  <!-- <app-product-list [list]="list"> </app-product-list> -->
+  <router-outlet></router-outlet>
+</div>

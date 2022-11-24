@@ -4,6 +4,7 @@ export interface MenuItem {
   title: string;
   img: string;
   active: string;
+  link?: string;
 }
 
 @Component({

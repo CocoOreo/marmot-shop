@@ -1,0 +1,20 @@
+<div class="container">
+  <div
+    class="product"
+    *ngFor="let product of list"
+    (click)="handleClickProduct(product, $event)">
+    <div class="img-container">
+      <img [src]="product.img" />
+      <div
+        class="bag-container"
+        (touchstart)="(true)"
+        (touchmove)="(true)"
+        (touchend)="(true)"
+        (click)="handleClickCart($event)">
+        <img src="assets/images/shopping-bag.svg" />
+      </div>
+    </div>
+    <p class="title">{{ product.title }}</p>
+    <p class="price">{{ formatCurrency(product.price) }}</p>
+  </div>
+</div>
